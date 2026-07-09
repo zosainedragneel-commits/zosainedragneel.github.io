@@ -1,0 +1,407 @@
+.mainContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    background: linear-gradient(#FFC0BE, #FF82A9);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10%;
+    box-sizing: border-box;
+}
+
+.mainGreeting {
+    font-size: 20px;
+    font-family: 'Mitr', sans-serif;
+    font-weight: bold;
+    margin: 0 0 10px 0; /* Top, Right, Bottom, Left */
+    letter-spacing: 1px;
+}
+
+.subtext {
+    font-size: 15px;
+    margin: -30px 0 20px 0; /* Top, Right, Bottom, Left */
+    opacity: 0.9;
+}
+
+.button1 {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2 ease;
+    background-color: #7F95D1;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button2 {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2 ease;
+    background-color: #7F95D1;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button1:hover {
+    background-color: #5A6FA3;
+    color: #FFFFFF;
+}
+
+.button2:hover {
+    background-color: #5A6FA3;
+    color: #FFFFFF;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #7F95D1;
+}
+
+ul li {
+    float: left;
+}
+
+ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul li a hover {
+    background-color: #111;
+}
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: #7F95D1;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar-item {
+    display: block;
+    padding: 10px 20px;
+    color: black; 
+    text-decoration: none;
+}
+
+.sidebar-item:hover {
+    background-color: #ddd;
+}
+
+#reasons {
+    max-width: 450px; 
+    margin: 0 auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+/* We target ONLY the reason items by using their unique container class */
+.text-container {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 12px;
+}
+
+.text-container .grid-item {
+    background-color: #ffffff;
+    border: 0.5px solid rgb(190, 190, 190);
+    border-radius: 6px; 
+    width: 80px;  
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.text-container .grid-item:hover:not(.revealed) {
+    transform: translateY(-2px);
+    border-color: #ff758f;
+    color: #ff758f;
+    background-color: #fff0f2;
+}
+
+.text-container .grid-item.revealed {
+    background-color: #ff758f;
+    color: white;
+    border-color: #ff758f;
+    border-radius: 8px;
+    width: 90%; 
+    height: auto;
+    min-height: 45px;
+    padding: 12px 15px;
+    font-size: 15px;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* ==========================================
+   SECTION 3: CHARACTER GALLERY (LARGE PROFILE)
+   ========================================== */
+#characters {
+    /* FIX: Widened from 450px to 650px to give it a spacious layout */
+    max-width: 650px; 
+    margin: 50px auto 0 auto;
+    text-align: center;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Isolated character container */
+.char-container {
+    background-color: #f1f1f1;
+    padding: 25px; /* Added more internal breathing room */
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 16px; /* Space between rows */
+}
+
+/* Unexpanded button style */
+.char-item {
+    background-color: #ffffff;
+    border: 0.5px solid rgb(190, 190, 190);
+    border-radius: 8px;
+    
+    /* Slightly larger initial buttons for a clearer grid flow */
+    width: 100px;  
+    height: 45px; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden; 
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.char-item:hover:not(.revealed) {
+    transform: translateY(-3px);
+    border-color: #ff758f;
+    background-color: #fff0f2;
+}
+
+.char-item:hover:not(.revealed) .number-label {
+    color: #ff758f;
+}
+
+/* --- LARGE REVEALED CARD STATE --- */
+.char-item.revealed {
+    width: 100%; /* Spans the full 650px wide container */
+    height: auto;
+    min-height: 140px; /* Bumped up height to accommodate larger pictures */
+    padding: 20px;
+    background-color: #ff758f;
+    border-color: #ff758f;
+    color: white;
+    cursor: default;
+    box-shadow: 0 8px 24px rgba(255, 117, 143, 0.35);
+    display: block; 
+}
+
+.char-item.revealed .number-label {
+    display: none;
+}
+
+.char-item.revealed .card-content {
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top for a cleaner profile look */
+    gap: 20px; /* More breathing room between the picture and text */
+    text-align: left;
+    width: 100%;
+    animation: fadeIn 0.4s forwards ease;
+}
+
+/* --- SCALED UP PORTRAIT STYLING --- */
+.char-portrait {
+    /* Increased dimensions significantly for crisp visibility */
+    width: 110px;
+    height: 140px;
+    
+    border-radius: 10px; /* Softer, modern corners */
+    object-fit: cover;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0; 
+}
+
+/* Character text layout details */
+.char-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* More space between character name and description */
+    padding-top: 4px;
+}
+
+.char-details h3 {
+    margin: 0;
+    font-size: 22px; /* Enlarged name header */
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.char-details .description {
+    margin: 0;
+    font-size: 15px; /* Larger body text for seamless reading */
+    line-height: 1.5;
+    opacity: 0.95;
+}
+
+/* ==========================================
+   SECTION 2: YOUR TUNES GRID (MUSIC PLAYERS)
+   ========================================== */
+#tunes {
+    max-width: 450px;
+    margin: 40px auto 0 auto; /* Added some top margin to separate the sections */
+    text-align: center;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* We isolate the music container so it doesn't leak into the text grid */
+.music-container {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 12px;
+}
+
+/* The unexpanded button style */
+.song-item {
+    background-color: #ffffff;
+    border: 0.5px solid rgb(190, 190, 190);
+    border-radius: 8px;
+    width: 80px;  
+    height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden; 
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.song-item:hover:not(.revealed) {
+    transform: translateY(-2px);
+    border-color: #ff758f;
+    background-color: #fff0f2;
+}
+
+.song-item:hover:not(.revealed) .number-label {
+    color: #ff758f;
+}
+
+.number-label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    transition: color 0.3s;
+}
+
+/* Hide inner card wrapper completely by default */
+.card-content {
+    display: none;
+    opacity: 0;
+    width: 100%;
+}
+
+/* --- THE REVEALED CARD STATE --- */
+.song-item.revealed {
+    width: 95%; 
+    height: auto;
+    min-height: 90px;
+    padding: 15px;
+    background-color: #ff758f;
+    border-color: #ff758f;
+    color: white;
+    cursor: default;
+    box-shadow: 0 6px 16px rgba(255, 117, 143, 0.3);
+    display: block; /* Changes from flex to block layout so layout expands correctly */
+}
+
+/* Hide the number indicator completely upon click */
+.song-item.revealed .number-label {
+    display: none;
+}
+
+/* Beautiful row layout for the art + info text inside the card */
+.song-item.revealed .card-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    width: 100%;
+    animation: fadeIn 0.4s forwards ease;
+}
+
+/* Album Art */
+.album-art {
+    width: 65px;
+    height: 65px;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0; /* Prevents text from squishing the picture square */
+}
+
+/* Clean text stack */
+.song-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.song-details h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.song-details .description {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}

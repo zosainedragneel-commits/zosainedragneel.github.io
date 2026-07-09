@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li><a href ="#" id = "menu-trigger" onclick="openMenu(); return false;">Menu</a></li>
+        <li><a href = "home.html">Home</a></li>
+        <li><a href = "celebrantInfo.html">About the Celebrant</a></li>
+    </ul>
+
+    <div id="menu" class="sidebar" style="display: none;">
+        <a href="#reasons" class="sidebar-item">Reasons why I love you</a>
+        <a href="#characters" class="sidebar-item">Characters you remind me of</a>
+        <a href="#tunes" class="sidebar-item">Tunes for the Heart</a>
+    </div>
+
+    <section id="reasons">
+    <h1>Reasons why I love you</h1>
+    <div class="container text-container">
+        <!-- Add data-reason attributes to each item -->
+        <div class="grid-item" data-reason="You're always there for me when I need you.">1</div>
+        <div class="grid-item" data-reason="You have a saint-like understanding for me and people you care about.">2</div>
+        <div class="grid-item" data-reason="You are incredibly supportive of my goals, even if they're so far-fetched.">3</div>
+        <div class="grid-item" data-reason="You have an amazing ability to make even the mundane moments feel special.">4</div>
+        <div class="grid-item" data-reason="You make me feel good and comfortable about myself and my image.">5</div>
+        <div class="grid-item" data-reason="You have the kindest heart of anyone I know.">6</div>
+        <div class="grid-item" data-reason="You feel passion so passionately. You see the good in everyone, even in me.">7</div>
+        <div class="grid-item" data-reason="I love your little quirks that define who you are. Like wafers in water. ">8</div>
+        <div class="grid-item" data-reason="The look you give me when I compliment you at random moments.">9</div>
+        <div class="grid-item" data-reason="You've never given up on me, and us, no matter what.">10</div>
+    </div>
+</section>
+
+<script src = "script.js"></script>
+
+    <section id = "characters">
+        <h1>Characters You Remind Me Of</h1>
+    <div class="container char-container">
+
+        <div class="char-item">
+            <span class="number-label">1</span>
+            <div class="card-content">
+                <img src="sherma.webp" alt="Character Portrait" class="char-portrait">
+                <div class="char-details">
+                    <h3>Sherma from Hollow Knight</h3>
+                    <p class="description">He is a pilgrim on a spiritual journey. He reminds me of your naivety—not in a way where he sings to solve his problems. He's kind and gentle, yet determined. He's also willing to brave danger to keep his peers safe.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="char-item">
+            <span class="number-label">2</span>
+            <div class="card-content">
+                <img src="aya.webp" alt="Character Portrait" class="char-portrait">
+                <div class="char-details">
+                    <h3>Aya Osawa from The Guy She Was Interested In Wasn't A Guy At All</h3>
+                    <p class="description">You've always mentioned that the soft, baby girl like persona of you isn't always open to people you don't truly connect with. I associate you with her so much since she's good at connecting in a way that you adjust so much of your soul just to meet people half-way. Also the fact that you always attract men but never attracted to them at all.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="char-item">
+            <span class="number-label">3</span>
+            <div class="card-content">
+                <img src="kiyoko.webp" alt="Character Portrait" class="char-portrait">
+                <div class="char-details">
+                    <h3>Kiyoko Shimizu by Haikyuu!</h3>
+                    <p class="description">You remind of her at times because she's one of those characters that  people truly see for the caring person that they are no matter how reserved they are at times. Also, very attractive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src = "characters.js"></script>
+
+    <section id = "tunes">
+        <h1>Songs that remind me of you</h1>
+    <div class="container music-container">
+
+        <div class="song-item">
+            <span class="number-label">1</span>
+            <div class="card-content" data-audio="songs/Brian McKnight - Back At One.mp3" data-start="74" data-end="110">
+                <img src="back at one.jfif" alt="Album Cover" class="album-art">
+                <div class="song-details">
+                    <h3>Back at One by Brian McKnight</h3>
+                    <p class="description">This song is kinda silly for me, but it's something that I believe. You're a dream come true, I only ever want to be with you and you're always going to be the one for me.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="song-item">
+            <span class="number-label">2</span>
+            <div class="card-content" data-audio="songs/NSYNC - This I Promise You.mp3" data-start="207" data-end="249">
+                <img src="this i promise you.jfif" alt="Album Cover" class="album-art">
+                <div class="song-details">
+                    <h3>This I Promise You by NSYNC</h3>
+                    <p class="description">Lyrics on this snippet specifically are something I want to promise you. I will always be there to hold you, be there for you when you need a shoulder to lean on.   </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="song-item">
+            <span class="number-label">3</span>
+            <div class="card-content" data-audio="songs/Olivia Rodrigo - honeybee.mp3" data-start="28" data-end="69">
+                <img src="youseemsosadforagirlsoinlove.png" alt="Album Cover" class="album-art">
+                <div class="song-details">
+                    <h3>Honeybee by Olivia Rodrigo</h3>
+                    <p class="description">I maybe misunderstanding this song, please do not hate me if I ever did. I've always found this romantic. My feelings for you are something I've always struggled to explain to other people but I truly do love you. I love how you look at me with so much love in your eyes that I've never seen other people look at me before and fall in love with you over and over again.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="song-item">
+            <span class="number-label">4</span>
+            <div class="card-content" data-audio="songs/The Weeknd - Starry Eyes.mp3" data-start="64" data-end="100">
+                <img src="starryeyes.webp" alt="Album Cover" class="album-art">
+                <div class="song-details">
+                    <h3>Starry Eyes by The Weeknd</h3>
+                    <p class="description">Another self-explanatory lyrics hehe. I will always be your willing heart-mender. I've mentioned this before, but when you fall, I will do my best to pick up the pieces and help you start over. There's no such thing as failures. Just delayed attempts.</p>
+                </div>
+            </div>
+        </div>
+
+        <div clas3s="song-item">
+            <span class="number-label">5</span>
+            <div class="card-content" data-audio="songs/The Marías - Sienna.mp3" data-start="129" data-end="210">
+                <img src="sienna.png" alt="Album Cover" class="album-art">
+                <div class="song-details">
+                    <h3>Sienna by The Marías</h3>
+                    <p class="description">If we have a baby girl would you name her Sienna? :3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    <script src = "tunes.js"></script>
+
+    <script>
+        function openMenu() {
+            document.getElementById("menu").style.display = "block";
+        }
+
+        function closeMenu() {
+            document.getElementById("menu").style.display = "none";
+        }
+
+        window.addEventListener('click', function(event) {
+            var menu = document.getElementById("menu");
+            var trigger = document.getElementById("menu-trigger");
+
+            if (menu.style.display == "block") {
+                if (!menu.contains(event.target) && event.target !== trigger) {
+                    closeMenu();
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
